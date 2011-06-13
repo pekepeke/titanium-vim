@@ -1,0 +1,50 @@
+
+*ref-timobileref.txt*	titanium mobile API ビューア用の ref ソース。
+
+Version: 0.0.1
+Author : pekepeke
+License: クリエイティブ・コモンズの表示 2.1 日本ライセンス
+	 <http://creativecommons.org/licenses/by/2.1/jp/>
+
+==============================================================================
+目次						*ref-timobileref-contents*
+
+概要				|ref-timobileref-introduction|
+カスタマイズ			|ref-timobileref-customizing|
+更新履歴			|ref-timobileref-changelog|
+
+
+==============================================================================
+概要						*ref-timobileref-introduction*
+
+*ref-timobileref* はtimobilerefのAPIドキュメント用の|ref| ソースです。
+
+
+要件:
+- |ref| 0.3.2 以降
+- titaniumref
+
+
+==============================================================================
+カスタマイズ					*ref-timobileref-customizing*
+
+g:ref_timobileref_cmd					*g:ref_timobileref_cmd*
+			timobileref APIドキュメント を表示するためのコマンドです。
+			実行ファイルは環境変数 $PATH が適切に設定されており、
+			また、実行可能なファイルである必要があります。
+
+g:ref_timobileref_complete_head			*g:ref_timobileref_complete_head*
+			補完時の動作を制御するオプションです。
+			1 の場合は、先頭マッチで補完を実施します。
+			デフォルト値は 1 です。
+
+
+==============================================================================
+更新履歴					*ref-timobileref-changelog*
+
+
+0.0.1	2010-12-16
+	- 初版。
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl

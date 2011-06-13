@@ -1,0 +1,97 @@
+
+*ft-titanium.txt*		Titanium filetype plugin。
+
+Version: 0.0.1
+Author : pekepeke
+License: クリエイティブ・コモンズの表示 2.1 日本ライセンス
+	 <http://creativecommons.org/licenses/by/2.1/jp/>
+
+==============================================================================
+目次						*ft-titanium-contents*
+
+概要				|ft-titanium-introduction|
+カスタマイズ			|ft-titanium-customizing|
+更新履歴			|ft-titanium-changelog|
+
+
+==============================================================================
+概要						*ft-titanium-introduction*
+
+*ft-titanium* は Titanium 用の ftplugin です.
+
+
+要件:
+- Titanium Desktop SDK 1.1.0, Titanium Mobile SDK 1.5.0 以降
+
+※以下のパッケージはなくとも動作しますが、より快適な環境にするために、
+  導入をお勧めします。
+- |ref| 0.3.2 以降
+- |neocomplecache|
+- |unite.vim|
+- |unite-fileline|
+- |vimproc|
+- App::timobileref
+- App::tidesktopref
+
+==============================================================================
+カスタマイズ					*ft-titanium-customizing*
+
+g:titanium_android_sdk_path			*g:titanium_android_sdk_path*
+			Android SDK のパスを指定します。
+			設定が行われていない場合、環境変数 ANDROID_HOME の
+			値を使用します。
+
+g:titanium_complete_head			*g:titanium_complete_head*
+			先頭マッチの Omni 補完を実施するかどうかを制御するフラグ。
+			このフラグがOFFの場合、メソッド名から Titanium API の
+			クラス名を補完します。
+			デフォルトは 0 です。
+
+g:titanium_method_complete_disabled		*g:titanium_method_complete_disabled*
+			Titanium API に存在するメソッドを Omni 補完する機能を抑止す
+			るためのフラグです。
+			デフォルトは 1 です。
+
+g:titanium_complete_short_style			*g:titanium_complete_short_style*
+			Omni 補完の候補に表示する項目を Ti prefix にするための
+			フラグです。
+			デフォルトは 1 です。
+
+g:titanium_desktop_complete_keywords_path	*g:titanium_desktop_complete_keywords_path*
+			Desktop API 補完キーワードファイルパスです。
+			指定がない場合は、*ft-titanium* 付属のファイルから補完
+			キーワードを検索します。
+
+g:titanium_mobile_complete_keywords_path	*g:titanium_mobile_complete_keywords_path*
+			Mobile API 補完キーワードファイルパスです。
+			指定がない場合は、*ft-titanium* 付属のファイルから補完
+			キーワードを検索します。
+
+g:titanium_sdk_root_dir				*g:titanium_sdk_root_dir*
+			Titanium SDK が格納されている root ディレクトリです。
+			指定なしの場合は、環境に応じて任意のディレクトリを
+			検索し、発見されたSDKを使用します。
+
+g:titanium_disable_keymap			*g:titanium_disable_keymap*
+			プラグイン側でのマッピング処理を実施しません。
+			このフラグが有効な場合、omnifunc の設定も
+			実施しません。
+
+==============================================================================
+TODOS						*ft-titanium-todos*
+
+	- FIXME をつぶす。
+	- 全体的なリファクタリング
+	- テストケースの作成
+	- build のバックグラウンド動作の実装
+	- 補完動作の改良
+
+==============================================================================
+更新履歴					*ft-titanium-changelog*
+
+
+0.0.1	2011-06-10
+	- 初版。
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl

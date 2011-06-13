@@ -1,0 +1,83 @@
+
+*ft-titanium.txt*		Titanium filetype plugin。
+
+Version: 0.0.1
+Author : pekepeke
+License: Creative Commons Attribution 2.1 Japan License
+	 <http://creativecommons.org/licenses/by/2.1/jp/>
+
+==============================================================================
+CONTENTS						*ft-titanium-contents*
+
+Introduction					|ft-titanium-introduction|
+Customize					|ft-titanium-customizing|
+Changelog					|ft-titanium-changelog|
+
+
+==============================================================================
+Introduction						*ft-titanium-introduction*
+
+
+*ft-titanium* is a Vim ftplugin for Titanium.
+
+
+Requirements:
+- Titanium Desktop SDK 1.1.0, Titanium Mobile SDK 1.5.0 以降
+
+  If you install following packages, you get better environment.
+- |ref| 0.3.2 or later
+- |neocomplecache|
+- |unite.vim|
+- |unite-fileline|
+- |vimproc|
+- App::timobileref
+- App::tidesktopref
+
+Cooperative plugins:
+- |ref|
+- |neocomplecache|
+
+==============================================================================
+Customize					*ft-titanium-customizing*
+
+g:titanium_android_sdk_path			*g:titanium_android_sdk_path*
+			Android SDK Path.
+			Default value is $ANDROID_HOME.
+
+g:titanium_complete_head			*g:titanium_complete_head*
+			Setting for omni completition behavior.
+			Defaut value is "0".
+
+g:titanium_method_complete_disabled		*g:titanium_method_complete_disabled*
+			Setting for omni completition behavior.
+			Defaut value is "1".
+
+g:titanium_complete_short_style			*g:titanium_complete_short_style*
+			Option for omni completition behavior.
+			Defaut value is "1".
+
+g:titanium_desktop_complete_keywords_path	*g:titanium_desktop_complete_keywords_path*
+			Option for completition keyword file path .
+			Default value is built-inkeyword file path.
+
+g:titanium_mobile_complete_keywords_path	*g:titanium_mobile_complete_keywords_path*
+			Option for completition keyword file path .
+			Default value is built-in keyword file path.
+
+g:titanium_sdk_root_dir				*g:titanium_sdk_root_dir*
+			Titanium SDK root directory path.
+			Default is search result by the plugin.
+
+g:titanium_disable_keymap			*g:titanium_disable_keymap*
+			Option for disable keymaps of plugin.
+			If the option is enable, omnifunc not be set.
+
+==============================================================================
+Changelog					*ft-titanium-changelog*
+
+
+0.0.1	2011-06-10
+	- Initial version.
+
+==============================================================================
+vim:tw=78:fo=tcq2mM:ts=8:ft=help:norl
