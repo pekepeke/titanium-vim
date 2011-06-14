@@ -49,7 +49,7 @@ if titanium#command#unite_utilizable()
 endif
 
 if titanium#command#help_utilizable()
-  iftitanium#is_desktop()
+  if titanium#is_desktop()
     command! -nargs=* -buffer TiDesktopHelp call titanium#command#help_open(<f-args>)
   else
     command! -nargs=* -buffer TiMobileHelp call titanium#command#help_open(<f-args>)
