@@ -4,15 +4,6 @@
 " License: Creative Commons Attribution 2.1 Japan License
 "          <http://creativecommons.org/licenses/by/2.1/jp/deed.en>
 
-" public vars {{{1
-if !exists('g:titanium_desktop_complete_keywords_path') " {{{2
-  let g:titanium_desktop_complete_keywords_path 
-        \ = <SID>find_complete_keywords_path('desktop')
-endif
-if !exists('g:titanium_mobile_complete_keywords_path') " {{{2
-  let g:titanium_mobile_complete_keywords_path 
-        \ = <SID>find_complete_keywords_path('mobile')
-endif
 " public {{{1
 function! titanium#is_mac() " {{{2
   return has('macunix') || (executable('uname') && system('uname') =~? '^darwin')
@@ -121,3 +112,12 @@ function! s:get_sdk_prefix() " {{{2
 endfunction
 
 
+" public vars {{{1
+if !exists('g:titanium_desktop_complete_keywords_path') " {{{2
+  let g:titanium_desktop_complete_keywords_path 
+        \ = <SID>find_complete_keywords_path('desktop')
+endif
+if !exists('g:titanium_mobile_complete_keywords_path') " {{{2
+  let g:titanium_mobile_complete_keywords_path 
+        \ = <SID>find_complete_keywords_path('mobile')
+endif
