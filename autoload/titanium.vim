@@ -108,7 +108,7 @@ endfunction
 
 
 function! s:get_sdk_prefix() " {{{2
-  return titanium#is_desktop() ? "sdk" : "mobilesdk";
+  return titanium#is_desktop() ? "sdk" : "mobilesdk"
 endfunction
 
 
