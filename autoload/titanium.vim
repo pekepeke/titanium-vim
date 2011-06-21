@@ -4,6 +4,16 @@
 " License: Creative Commons Attribution 2.1 Japan License
 "          <http://creativecommons.org/licenses/by/2.1/jp/deed.en>
 
+" public vars {{{1
+if !exists('g:titanium_desktop_complete_keywords_path') " {{{2
+  let g:titanium_desktop_complete_keywords_path 
+        \ = <SID>find_complete_keywords_path('desktop')
+endif
+if !exists('g:titanium_mobile_complete_keywords_path') " {{{2
+  let g:titanium_mobile_complete_keywords_path 
+        \ = <SID>find_complete_keywords_path('mobile')
+endif
+" public {{{1
 function! titanium#is_mac() " {{{2
   return has('macunix') || (executable('uname') && system('uname') =~? '^darwin')
 endfunction
@@ -64,7 +74,6 @@ function! titanium#get_sdk_path() " {{{2
   return ''
 endfunction
 
-
 function! titanium#get_android_sdk_path() " {{{2
   if exists('g:titanium_android_sdk_path')
     return g:titanium_android_sdk_path
@@ -89,7 +98,15 @@ function! titanium#get_android_sdk_path() " {{{2
   return ''
 endfunction
 
-" }}} 
+
+function! titanium#get_keywordfile_path() " {{{2
+  return titanium#is_desktop() ? 
+        \ g:titanium_desktop_complete_keywords_path :
+        \ g:titanium_mobile_complete_keywords_path
+endfunction
+
+
+" private {{{1
 function! s:find_complete_keywords_path(mode) " {{{2
   let fname = (a:mode ==? 'desktop' ? 'lib/tidesktop.txt' : 'lib/timobile.txt')
   let l:files = split(globpath(&rtp, fname), "\n")
@@ -98,16 +115,9 @@ function! s:find_complete_keywords_path(mode) " {{{2
   endif
 endfunction
 
-if !exists('g:titanium_desktop_complete_keywords_path') " {{{2
-  let g:titanium_desktop_complete_keywords_path 
-        \ = <SID>find_complete_keywords_path('desktop')
-endif
-if !exists('g:titanium_mobile_complete_keywords_path') " {{{2
-  let g:titanium_mobile_complete_keywords_path 
-        \ = <SID>find_complete_keywords_path('mobile')
-endif
-function! titanium#get_keywordfile_path() " {{{2
-  return titanium#is_desktop() ? 
-        \ g:titanium_desktop_complete_keywords_path :
-        \ g:titanium_mobile_complete_keywords_path
+
+function! s:get_sdk_prefix() " {{{2
+  return titanium#is_desktop() ? "sdk" : "mobilesdk";
 endfunction
+
+
