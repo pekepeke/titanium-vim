@@ -7,27 +7,33 @@ snippet view
 	});
 	${2}
 
-snippet webview
+snippet img
+	Ti.UI.createImageView({
+		image: ${1:/*image*/}
+	});
+	${2}
+
+snippet web
 	Ti.UI.createWebView({
-		url: ${1:/*address*/},
+		url: ${1:/*address*/}
 	});
 	${2}
 
 snippet win
 	Ti.UI.createWindow({
-		${1:/*options*/},
+		${1:/*options*/}
 	});
 	${2}
 
-snippet label
+snippet lbl
 	Ti.UI.createLabel({
-		text: ${1:/*text*/},
+		text: ${1:/*text*/}
 	});
 	${2}
 
 snippet btn
 	Ti.UI.createButton({
-		title: ${1:/*title*/},
+		title: ${1:/*title*/}
 	});
 	${2}
 
@@ -38,8 +44,11 @@ snippet btnbar
 	${2}
 
 
-#Shorthand for referencing platform specific UIs
+#Shorthand for referencing platform specific APIs
 snippet and
+	Ti.Android
+
+snippet uand
 	Ti.UI.Android${1}
 
 snippet ios
@@ -50,3 +59,36 @@ snippet iphone
 
 snippet ipad
 	Ti.UI.iPad${1}
+
+
+#Snippets for commonly used titanium modules
+snippet prop
+	Ti.App.Properties${1}
+
+snippet fb
+	Ti.Facebook${1}
+
+snippet db
+	Ti.Database${1}
+
+snippet fs
+	Ti.FileSystem${1}
+
+snippet cloud
+	Ti.Cloud${1}
+
+snippet net
+	Ti.Network${1}
+
+snippet geo
+	Ti.Geolocation${1}
+	
+
+#Shorthand for global JSON functions
+snippet parse
+	JSON.parse(${1:/*jsonString*/})${2}
+
+snippet stringify
+	JSON.stringify(${1:/*jsonObject*/})${2}
+	
+
