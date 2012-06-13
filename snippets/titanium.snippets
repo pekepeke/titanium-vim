@@ -1,4 +1,5 @@
-#Snippets for Titanium Appcelerator
+#Snippets for Titanium
+
 
 #View and window creation snippets
 snippet view
@@ -43,6 +44,44 @@ snippet btnbar
 	});
 	${2}
 
+snippet tg
+	Ti.UI.createTabGroup({
+		${1:/*options*/}
+	});
+	${2}
+
+snippet tab
+	Ti.UI.createTab({
+		window: ${1:/*window*/},
+		title: ${2:/*title*/},
+		icon: ${3}
+	});
+	${4}
+
+snippet pick
+	Ti.UI.createPicker({
+		${1:/*options*/}
+	});
+	${2}
+
+snippet pb
+	Ti.UI.createProgressBar({
+		${1}
+	});
+	${2}
+
+snippet actin
+	Ti.Ui.createActivityIndicator({
+		message: ${1:/*message*/}
+	});
+	${2}
+
+snippet mask
+	Ti.UI.createMaskedImage({
+		mask: ${1:/*alpha mask*/},
+		image: ${2:/*image to mask*/},
+	});
+
 
 #Shorthand for referencing platform specific APIs
 snippet and
@@ -80,15 +119,41 @@ snippet cloud
 snippet net
 	Ti.Network${1}
 
+snippet client
+	Ti.Network.HTTPClient${1}
+
+snippet sock
+	Ti.Network.Socket${1}
+
 snippet geo
 	Ti.Geolocation${1}
+
+snippet xml
+	Ti.XML${1}
 	
 
 #Shorthand for global JSON functions
-snippet parse
+snippet par
 	JSON.parse(${1:/*jsonString*/})${2}
 
-snippet stringify
+snippet str
 	JSON.stringify(${1:/*jsonObject*/})${2}
 	
+
+#Snippets for logging out to console
+snippet info
+	Ti.API.info(${1:/*message*/});
+	${2}
+
+snippet log
+	Ti.API.log(${1:/*level*/}, ${2:/*message*/});
+	${3}
+	
+snippet err
+	Ti.API.error(${1:/*message*/});
+	${2}
+	
+snippet debug
+	Ti.API.debug(${1:/*message*/});
+	${2}
 
