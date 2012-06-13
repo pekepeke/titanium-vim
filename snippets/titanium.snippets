@@ -1,17 +1,52 @@
 #Snippets for Titanium Appcelerator
 
+#View and window creation snippets
 snippet view
 	Ti.UI.createView({
 		${1:/*options*/}
 	});
+	${2}
 
 snippet webview
 	Ti.UI.createWebView({
 		url: ${1:/*address*/},
-		${2:/*options*/}
 	});
+	${2}
 
 snippet win
 	Ti.UI.createWindow({
-		${1:/*options*/}
+		${1:/*options*/},
 	});
+	${2}
+
+snippet label
+	Ti.UI.createLabel({
+		text: ${1:/*text*/},
+	});
+	${2}
+
+snippet btn
+	Ti.UI.createButton({
+		title: ${1:/*title*/},
+	});
+	${2}
+
+snippet btnbar
+	Ti.UI.createButtonBar({
+		labels: ${1:/*labels*/}
+	});
+	${2}
+
+
+#Shorthand for referencing platform specific UIs
+snippet and
+	Ti.UI.Android${1}
+
+snippet ios
+	Ti.UI.iOS${1}
+
+snippet iphone
+	Ti.UI.iPhone${1}
+
+snippet ipad
+	Ti.UI.iPad${1}
