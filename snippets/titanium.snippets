@@ -70,6 +70,12 @@ snippet pb
 	});
 	${2}
 
+snippet sw
+	Ti.UI.createSwitch({
+		value: ${1:/*boolean value*/}
+	});
+	${2}
+
 snippet actin
 	Ti.Ui.createActivityIndicator({
 		message: ${1:/*message*/}
@@ -82,6 +88,38 @@ snippet mask
 		image: ${2:/*image to mask*/},
 	});
 
+snippet texta
+	Ti.UI.createTextArea({
+		${1}
+	});
+	${2}
+
+snippet textf
+	Ti.UI.createTextField({
+		${1}
+	});
+	${2}
+
+snippet table
+	Ti.UI.createTableView({
+		${1}
+	});
+	${2}
+
+snippet row
+	Ti.UI.createTableRowView({
+		${1}
+	});
+	${2}
+	
+snippet slider
+	Ti.UI.createSlider({
+		${1}
+	});
+	${2}
+
+snippet trigger
+	
 
 #Shorthand for referencing platform specific APIs
 snippet and
@@ -128,6 +166,12 @@ snippet sock
 snippet geo
 	Ti.Geolocation${1}
 
+snippet media
+	Ti.Media${1}
+
+snippet con
+	Ti.Contacts${1}
+	
 snippet xml
 	Ti.XML${1}
 	
@@ -140,20 +184,20 @@ snippet str
 	JSON.stringify(${1:/*jsonObject*/})${2}
 	
 
-#Snippets for logging out to console
+#Snippets for logging to the console
 snippet info
-	Ti.API.info(${1:/*message*/});
+	Ti.API.info(${1:'message'});
 	${2}
 
 snippet log
-	Ti.API.log(${1:/*level*/}, ${2:/*message*/});
+	Ti.API.log(${1:/*level*/}, ${2:'message'});
 	${3}
 	
 snippet err
-	Ti.API.error(${1:/*message*/});
+	Ti.API.error(${1:'message'});
 	${2}
 	
 snippet debug
-	Ti.API.debug(${1:/*message*/});
+	Ti.API.debug(${1:'message'});
 	${2}
 
