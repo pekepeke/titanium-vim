@@ -158,7 +158,15 @@ snippet net
 	Ti.Network${1}
 
 snippet client
-	Ti.Network.HTTPClient${1}
+	Ti.Network.HTTPClient({
+		onload = function(e) {
+			${1:/*onload*/}
+		},
+		onerror = function(e) {
+			${2:/*onerror*/}
+		}
+	});
+	${3}
 
 snippet sock
 	Ti.Network.Socket${1}
