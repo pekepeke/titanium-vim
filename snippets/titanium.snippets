@@ -1,211 +1,147 @@
 #Snippets for Titanium
-
-
+######################
 #View and window creation snippets
 snippet view
 	Ti.UI.createView({
 		${1:/*options*/}
 	});
-	${2}
-
 snippet img
 	Ti.UI.createImageView({
-		image: ${1:/*image*/}
+		image: ${1:/*image,*/}
 	});
-	${2}
-
 snippet web
 	Ti.UI.createWebView({
-		url: ${1:/*address*/}
+		url: ${1:/*address,*/}
 	});
-	${2}
-
 snippet win
 	Ti.UI.createWindow({
 		${1:/*options*/}
 	});
-	${2}
-
 snippet lbl
 	Ti.UI.createLabel({
 		text: ${1:/*text*/}
 	});
-	${2}
-
 snippet btn
 	Ti.UI.createButton({
 		title: ${1:/*title*/}
 	});
-	${2}
-
 snippet btnbar
 	Ti.UI.createButtonBar({
 		labels: ${1:/*labels*/}
 	});
-	${2}
-
 snippet tg
 	Ti.UI.createTabGroup({
 		${1:/*options*/}
 	});
-	${2}
-
 snippet tab
 	Ti.UI.createTab({
 		window: ${1:/*window*/},
 		title: ${2:/*title*/},
 		icon: ${3}
 	});
-	${4}
-
 snippet pick
 	Ti.UI.createPicker({
 		${1:/*options*/}
 	});
-	${2}
-
 snippet pb
 	Ti.UI.createProgressBar({
 		${1}
 	});
-	${2}
-
 snippet sw
 	Ti.UI.createSwitch({
 		value: ${1:/*boolean value*/}
 	});
-	${2}
-
 snippet actin
 	Ti.Ui.createActivityIndicator({
 		message: ${1:/*message*/}
 	});
-	${2}
-
 snippet mask
 	Ti.UI.createMaskedImage({
 		mask: ${1:/*alpha mask*/},
 		image: ${2:/*image to mask*/},
 	});
-
 snippet texta
 	Ti.UI.createTextArea({
 		${1}
 	});
-	${2}
-
 snippet textf
 	Ti.UI.createTextField({
 		${1}
 	});
-	${2}
-
 snippet table
 	Ti.UI.createTableView({
 		${1}
 	});
-	${2}
-
 snippet row
-	Ti.UI.createTableRowView({
+	Ti.UI.createTableViewRow({
 		${1}
 	});
-	${2}
-	
 snippet slider
 	Ti.UI.createSlider({
 		${1}
 	});
-	${2}
-
-snippet trigger
-	
-
+#
 #Shorthand for referencing platform specific APIs
+#
 snippet and
-	Ti.Android
-
+	Ti.Android${1}
 snippet uand
 	Ti.UI.Android${1}
-
 snippet ios
 	Ti.UI.iOS${1}
-
 snippet iphone
 	Ti.UI.iPhone${1}
-
 snippet ipad
 	Ti.UI.iPad${1}
-
-
+#
 #Snippets for commonly used titanium modules
+#
 snippet prop
 	Ti.App.Properties${1}
-
 snippet fb
 	Ti.Facebook${1}
-
 snippet db
 	Ti.Database${1}
-
 snippet fs
 	Ti.FileSystem${1}
-
 snippet cloud
 	Ti.Cloud${1}
-
 snippet net
 	Ti.Network${1}
-
 snippet client
-	Ti.Network.HTTPClient({
-		onload = function(e) {
+	Ti.Network.createHTTPClient({
+		onload: function(e) {
 			${1:/*onload*/}
 		},
-		onerror = function(e) {
+		onerror: function(e) {
 			${2:/*onerror*/}
 		}
-	});
-	${3}
-
+	});${3}
 snippet sock
 	Ti.Network.Socket${1}
-
 snippet geo
 	Ti.Geolocation${1}
-
 snippet media
 	Ti.Media${1}
-
 snippet con
 	Ti.Contacts${1}
-	
 snippet xml
 	Ti.XML${1}
-	
-
+#
 #Shorthand for global JSON functions
+#
 snippet par
 	JSON.parse(${1:/*jsonString*/})${2}
-
 snippet str
 	JSON.stringify(${1:/*jsonObject*/})${2}
-	
-
+#
 #Snippets for logging to the console
+#
 snippet info
-	Ti.API.info(${1:'message'});
-	${2}
-
+	Ti.API.info(${1:'message'});${2}
 snippet log
-	Ti.API.log(${1:/*level*/}, ${2:'message'});
-	${3}
-	
+	Ti.API.log(${1:/*level*/}, ${2:'message'});${3}
 snippet err
-	Ti.API.error(${1:'message'});
-	${2}
-	
+	Ti.API.error(${1:'message'});${2}
 snippet debug
-	Ti.API.debug(${1:'message'});
-	${2}
-
+	Ti.API.debug(${1:'message'});${2}
